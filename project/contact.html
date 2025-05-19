@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Shop Cozy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .form-group label {
+            font-family: 'Inter', sans-serif; /* Ensure label font matches */
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-gray-100 to-gray-50 dark:from-gray-900 dark:to-black">
+    <header class="site-header bg-white/90 dark:bg-gray-800/90 backdrop-blur-md py-4 shadow-md sticky top-0 z-10">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="/" class="text-xl font-semibold text-gray-800 dark:text-white">
+                Shop Cozy
+            </a>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-6">
+                    <li><a href="/" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-gray-700 dark:text-gray-300">Home</a></li>
+                    <li><a href="/products" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-gray-700 dark:text-gray-300">Products</a></li>
+                    <li><a href="/about" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-gray-700 dark:text-gray-300">About</a></li>
+                    <li><a href="/contact" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-gray-700 dark:text-gray-300">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-700 dark:text-gray-300 focus:outline-none" aria-label="Toggle Mobile Menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
+                    </svg>
+
+                </button>
+                <div id="mobile-menu" class="hidden absolute top-16 right-0 bg-white/90 dark:bg-gray-800/90 backdrop-blur-md shadow-lg rounded-md py-2 px-4 space-y-2 w-48">
+                    <a href="/" class="block hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-gray-700 dark:text-gray-300">Home</a>
+                    <a href="/products" class="block hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-gray-700 dark:text-gray-300">Products</a>
+                    <a href="/about" class="block hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-gray-700 dark:text-gray-300">About</a>
+                    <a href="/contact" class="block hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-gray-700 dark:text-gray-300">Contact</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="contact-page">
+        <div class="container mx-auto px-4 py-10">
+            <section class="contact-hero text-center mb-12">
+                <h1 class="page-title text-4xl font-semibold text-gray-800 dark:text-white tracking-tight">Contact Us</h1>
+                <p class="hero-text text-lg text-gray-600 dark:text-gray-400 mt-4 max-w-2xl mx-auto">
+                    We'd love to hear from you! Get in touch with any questions or feedback.
+                </p>
+            </section>
+
+            <div class="contact-container grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="contact-info bg-white/90 dark:bg-gray-800/90 backdrop-blur-md rounded-lg shadow-lg p-6 space-y-6">
+                    <h2 class="text-2xl font-semibold text-gray-800 dark:text-white">Get in Touch</h2>
+                    <div class="info-item flex items-start gap-4">
+                        <span class="info-icon text-blue-600 dark:text-blue-400 mt-1">📍</span>
+                        <p class="text-gray-700 dark:text-gray-300">123 Fashion Street, Clothing City, 12345</p>
+                    </div>
+                    <div class="info-item flex items-start gap-4">
+                        <span class="info-icon text-blue-600 dark:text-blue-400 mt-1">📞</span>
+                        <p class="text-gray-700 dark:text-gray-300">+1 (555) 123-4567</p>
+                    </div>
+                    <div class="info-item flex items-start gap-4">
+                        <span class="info-icon text-blue-600 dark:text-blue-400 mt-1">📧</span>
+                        <p class="text-gray-700 dark:text-gray-300">contact@shopcozy.com</p>
+                    </div>
+                    <div class="info-item flex items-start gap-4">
+                        <span class="info-icon text-blue-600 dark:text-blue-400 mt-1">⏰</span>
+                        <p class="text-gray-700 dark:text-gray-300">Mon - Fri: 9 AM - 6 PM</p>
+                    </div>
+                </div>
+
+                <form class="contact-form bg-white/90 dark:bg-gray-800/90 backdrop-blur-md rounded-lg shadow-lg p-6" id="contactForm">
+                    <h2 class="text-2xl font-semibold text-gray-800 dark:text-white mb-6">Send us a Message</h2>
+                    <div class="form-group mb-4">
+                        <input type="text" id="name" name="name" required class="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 focus:ring-2 focus:ring-blue-500 focus:outline-none bg-transparent text-gray-800 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500" placeholder="Your Name">
+                        <label for="name" class="absolute left-2 -top-3 text-gray-600 dark:text-gray-400 text-sm bg-white dark:bg-gray-800 px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-3 peer-focus:text-gray-600 dark:peer-focus:text-gray-400">Your Name</label>
+                    </div>
+                    <div class="form-group mb-4">
+                        <input type="email" id="email" name="email" required class="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 focus:ring-2 focus:ring-blue-500 focus:outline-none bg-transparent text-gray-800 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500" placeholder="Your Email">
+                        <label for="email" class="absolute left-2 -top-3 text-gray-600 dark:text-gray-400 text-sm bg-white dark:bg-gray-800 px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-3 peer-focus:text-gray-600 dark:peer-focus:text-gray-400">Your Email</label>
+                    </div>
+                    <div class="form-group mb-6">
+                        <textarea id="message" name="message" required class="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 focus:ring-2 focus:ring-blue-500 focus:outline-none bg-transparent text-gray-800 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 h-32 resize-y" placeholder="Your Message"></textarea>
+                        <label for="message" class="absolute left-2 -top-3 text-gray-600 dark:text-gray-400 text-sm bg-white dark:bg-gray-800 px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-3 peer-focus:text-gray-600 dark:peer-focus:text-gray-400">Your Message</label>
+                    </div>
+                    <button type="submit" class="btn bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-md transition-colors duration-300 w-full">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer bg-gray-100 dark:bg-gray-900 py-6">
+        <div class="container mx-auto px-4 text-center text-gray-600 dark:text-gray-400">
+            <p>&copy; 2023 Shop Cozy. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        document.addEventListener('click', (event) => {
+            if (mobileMenu && !mobileMenu.classList.contains('hidden') && !mobileMenu.contains(event.target) && event.target !== mobileMenuButton) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+
+
+        const contactForm = document.getElementById('contactForm');
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', (event) => {
+                event.preventDefault();
+
+                const nameInput = document.getElementById('name');
+                const emailInput = document.getElementById('email');
+                const messageInput = document.getElementById('message');
+
+                if (!nameInput.value.trim()) {
+                    alert('Please enter your name.');
+                    return;
+                }
+                if (!emailInput.value.trim()) {
+                    alert('Please enter your email.');
+                    return;
+                }
+                if (!messageInput.value.trim()) {
+                    alert('Please enter your message.');
+                    return;
+                }
+
+                // Simulate sending the message (replace with actual backend logic)
+                console.log('Form submitted:', {
+                    name: nameInput.value,
+                    email: emailInput.value,
+                    message: messageInput.value,
+                });
+
+                alert('Message sent successfully! We will get back to you soon.');
+                contactForm.reset();
+            });
+        }
+    </script>
+</body>
+</html>

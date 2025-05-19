@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Shop Cozy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .value-card h3 {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-gray-100 to-gray-50 dark:from-gray-900 dark:to-black">
+    <header class="site-header bg-white/90 dark:bg-gray-800/90 backdrop-blur-md py-4 shadow-md sticky top-0 z-10">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="/" class="text-xl font-semibold text-gray-800 dark:text-white">
+                Shop Cozy
+            </a>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-6">
+                    <li><a href="/" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-gray-700 dark:text-gray-300">Home</a></li>
+                    <li><a href="/products" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-gray-700 dark:text-gray-300">Products</a></li>
+                    <li><a href="/about" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-gray-700 dark:text-gray-300">About</a></li>
+                    <li><a href="/contact" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-gray-700 dark:text-gray-300">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-700 dark:text-gray-300 focus:outline-none" aria-label="Toggle Mobile Menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
+                    </svg>
+                </button>
+                <div id="mobile-menu" class="hidden absolute top-16 right-0 bg-white/90 dark:bg-gray-800/90 backdrop-blur-md shadow-lg rounded-md py-2 px-4 space-y-2 w-48">
+                    <a href="/" class="block hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-gray-700 dark:text-gray-300">Home</a>
+                    <a href="/products" class="block hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-gray-700 dark:text-gray-300">Products</a>
+                    <a href="/about" class="block hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-gray-700 dark:text-gray-300">About</a>
+                    <a href="/contact" class="block hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-gray-700 dark:text-gray-300">Contact</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="about-page">
+        <div class="container mx-auto px-4 py-10">
+            <section class="about-hero text-center mb-12">
+                <h1 class="page-title text-4xl font-semibold text-gray-800 dark:text-white tracking-tight">About Shop Cozy</h1>
+                <p class="hero-text text-lg text-gray-600 dark:text-gray-400 mt-4 max-w-2xl mx-auto">
+                    Discover the story behind our premium clothing brand.
+                </p>
+            </section>
+
+            <section class="our-story bg-white/90 dark:bg-gray-800/90 backdrop-blur-md rounded-lg shadow-lg p-6 mb-12">
+                <h2 class="text-2xl font-semibold text-gray-800 dark:text-white mb-4">Our Story</h2>
+                <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+                    Shop Cozy was founded with a passion for creating comfortable, stylish clothing that makes people feel good. We believe that fashion should be both beautiful and practical, and we're committed to using only the finest materials in our products.
+                </p>
+            </section>
+
+            <section class="our-values bg-white/90 dark:bg-gray-800/90 backdrop-blur-md rounded-lg shadow-lg p-6 mb-12">
+                <h2 class="text-2xl font-semibold text-gray-800 dark:text-white mb-6">Our Values</h2>
+                <div class="values-grid grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="value-card bg-gray-100 dark:bg-gray-700 rounded-md p-4 shadow-md transition-all duration-300 hover:shadow-lg hover:scale-[1.02]">
+                        <h3 class="text-xl font-semibold text-blue-600 dark:text-blue-400 mb-2">Quality</h3>
+                        <p class="text-gray-600 dark:text-gray-400">We never compromise on quality, using only premium materials and expert craftsmanship.</p>
+                    </div>
+                    <div class="value-card bg-gray-100 dark:bg-gray-700 rounded-md p-4 shadow-md transition-all duration-300 hover:shadow-lg hover:scale-[1.02]">
+                        <h3 class="text-xl font-semibold text-blue-600 dark:text-blue-400 mb-2">Sustainability</h3>
+                        <p class="text-gray-600 dark:text-gray-400">We're committed to reducing our environmental impact through responsible manufacturing practices.</p>
+                    </div>
+                    <div class="value-card bg-gray-100 dark:bg-gray-700 rounded-md p-4 shadow-md transition-all duration-300 hover:shadow-lg hover:scale-[1.02]">
+                        <h3 class="text-xl font-semibold text-blue-600 dark:text-blue-400 mb-2">Comfort</h3>
+                        <p class="text-gray-600 dark:text-gray-400">Our designs prioritize comfort without sacrificing style or quality.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer bg-gray-100 dark:bg-gray-900 py-6">
+        <div class="container mx-auto px-4 text-center text-gray-600 dark:text-gray-400">
+            <p>&copy; 2023 Shop Cozy. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        document.addEventListener('click', (event) => {
+            if (mobileMenu && !mobileMenu.classList.contains('hidden') && !mobileMenu.contains(event.target) && event.target !== mobileMenuButton) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>

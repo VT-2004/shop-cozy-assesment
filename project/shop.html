@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop | Shop Cozy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .product-grid h2 {
+            font-family: 'Inter', sans-serif;
+        }
+        .filters select{
+             font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900">
+    <header class="site-header bg-white/90 dark:bg-gray-800/90 backdrop-blur-md py-4 shadow-md sticky top-0 z-10">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="/" class="text-xl font-semibold text-gray-800 dark:text-white">
+                Shop Cozy
+            </a>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-6">
+                    <li><a href="/" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-gray-700 dark:text-gray-300">Home</a></li>
+                    <li><a href="/products" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-gray-700 dark:text-gray-300">Products</a></li>
+                    <li><a href="/about" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-gray-700 dark:text-gray-300">About</a></li>
+                    <li><a href="/contact" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-gray-700 dark:text-gray-300">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-700 dark:text-gray-300 focus:outline-none" aria-label="Toggle Mobile Menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
+                    </svg>
+                </button>
+                <div id="mobile-menu" class="hidden absolute top-16 right-0 bg-white/90 dark:bg-gray-800/90 backdrop-blur-md shadow-lg rounded-md py-2 px-4 space-y-2 w-48">
+                    <a href="/" class="block hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-gray-700 dark:text-gray-300">Home</a>
+                    <a href="/products" class="block hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-gray-700 dark:text-gray-300">Products</a>
+                    <a href="/about" class="block hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-gray-700 dark:text-gray-300">About</a>
+                    <a href="/contact" class="block hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-gray-700 dark:text-gray-300">Contact</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="shop-page py-10">
+        <div class="container mx-auto px-4">
+            <h1 class="page-title text-3xl font-semibold text-gray-800 dark:text-white text-center mb-8 tracking-tight">Shop</h1>
+            
+            <div class="filters flex flex-wrap justify-center gap-4 mb-8">
+                <div class="filter-category">
+                    <select id="categoryFilter" class="bg-white/90 dark:bg-gray-700/90 backdrop-blur-md rounded-md border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        <option value="all">All Categories</option>
+                        <option value="men">Men</option>
+                        <option value="women">Women</option>
+                        <option value="accessories">Accessories</option>
+                    </select>
+                </div>
+                <div class="filter-price">
+                    <select id="priceFilter" class="bg-white/90 dark:bg-gray-700/90 backdrop-blur-md rounded-md border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        <option value="all">Price Range</option>
+                        <option value="low">$0 - $50</option>
+                        <option value="medium">$50 - $100</option>
+                        <option value="high">$100+</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="product-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="productGrid">
+                </div>
+        </div>
+    </main>
+
+    <footer class="site-footer bg-gray-100 dark:bg-gray-900 py-6">
+        <div class="container mx-auto px-4 text-center text-gray-600 dark:text-gray-400">
+            <p>&copy; 2023 Shop Cozy. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const products = [
+            {
+                id: 1,
+                name: 'Product 1',
+                category: 'men',
+                price: 25,
+                image: 'https://www.llbean.net/firstspirit/media/image_library/newsroom_1/518647_ragg_wool/518647_4_XLarge50.jpg',
+            },
+            {
+                id: 2,
+                name: 'Product 2',
+                category: 'women',
+                price: 60,
+                image: 'https://i5.walmartimages.com/asr/9f228d9e-4582-434c-9cd3-2ffaa45b4000_1.c42b0b1a13cdfe59c2ecfa4a55dec434.jpeg',
+            },
+            {
+                id: 3,
+                name: 'Product 3',
+                category: 'accessories',
+                price: 120,
+                image: 'https://cdn.shopify.com/s/files/1/0624/3123/2241/products/0-main-2022-men39s-watches-top-brand-luxury-men-wrist-watch-leather-quartz-watch-sports-waterproof-male-clock-relogio-masculinobox-2023_2.jpg?v=1654443374',
+            },
+             {
+                id: 4,
+                name: 'Product 4',
+                category: 'men',
+                price: 120,
+                image: 'https://cdni.llbean.net/is/image/wim/298259_28450_41?hei=1095&wid=950&resMode=sharp2&defaultImage=llbprod/A0211793_2',
+            },
+            {
+                id: 5,
+                name: 'Product 5',
+                category: 'women',
+                price: 20,
+                image: 'https://www.michaellaurenclothing.com/cdn/shop/files/ML-6003-RIB-BLK-01_800x.jpg?v=1686932390',
+            },
+            {
+                id: 6,
+                name: 'Product 6',
+                category: 'accessories',
+                price: 70,
+                image: 'https://i5.walmartimages.com/asr/823af289-9c7b-4ac6-9a8d-a3fea0a55492_1.0703c5a8aaf5a93c990bc68e35085fb9.jpeg',
+            },
+            {
+                id: 7,
+                name: 'Product 7',
+                category: 'men',
+                price: 30,
+                image: 'https://www.dhresource.com/0x0/f2/albu/g8/M01/95/19/rBVaVF6DvX6AbgfZAAGBDIT4Dcc699.jpg/sleeve-boy-tops-autumn-luxury-men-shirts.jpg',
+            },
+            {
+                id: 8,
+                name: 'Product 8',
+                category: 'women',
+                price: 80,
+                image: 'https://i5.walmartimages.com/asr/2619ef85-def9-424c-9013-aad5be05f8a7_1.f5e7430bf662d25465eccaf961c1c5e5.jpeg',
+            },
+            {
+                id: 9,
+                name: 'Product 9',
+                category: 'accessories',
+                price: 150,
+                image: 'https://img.joomcdn.net/ebc9ef2096765b528d001f973b867ab8f627b2a8_original.jpeg',
+            },
+        ];
+
+        const productGrid = document.getElementById('productGrid');
+        const categoryFilter = document.getElementById('categoryFilter');
+        const priceFilter = document.getElementById('priceFilter');
+
+        function displayProducts(filteredProducts) {
+            productGrid.innerHTML = '';
+
+            filteredProducts.forEach((product) => {
+                const productCard = document.createElement('div');
+                productCard.classList.add('product-card', 'bg-white/90', 'dark:bg-gray-800/90', 'backdrop-blur-md', 'rounded-lg', 'shadow-md', 'overflow-hidden', 'transition-all', 'duration-300', 'hover:shadow-lg', 'hover:scale-[1.02]');
+
+                productCard.innerHTML = `
+                    <img src="${product.image}" alt="${product.name}" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h2 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">${product.name}</h2>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">$${product.price.toFixed(2)}</p>
+                        <a href="#" class="btn bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md transition-colors duration-300 inline-block w-full text-center">Add to Cart</a>
+                    </div>
+                `;
+
+                productGrid.appendChild(productCard);
+            });
+        }
+
+        function filterProducts() {
+            const selectedCategory = categoryFilter.value;
+            const selectedPrice = priceFilter.value;
+
+            let filteredProducts = products;
+
+            if (selectedCategory !== 'all') {
+                filteredProducts = filteredProducts.filter(
+                    (product) => product.category === selectedCategory
+                );
+            }
+
+            if (selectedPrice !== 'all') {
+                if (selectedPrice === 'low') {
+                    filteredProducts = filteredProducts.filter(
+                        (product) => product.price >= 0 && product.price <= 50
+                    );
+                } else if (selectedPrice === 'medium') {
+                    filteredProducts = filteredProducts.filter(
+                        (product) => product.price > 50 && product.price <= 100
+                    );
+                } else if (selectedPrice === 'high') {
+                    filteredProducts = filteredProducts.filter(
+                        (product) => product.price > 100
+                    );
+                }
+            }
+
+            displayProducts(filteredProducts);
+        }
+
+        categoryFilter.addEventListener('change', filterProducts);
+        priceFilter.addEventListener('change', filterProducts);
+
+        displayProducts(products);
+
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        document.addEventListener('click', (event) => {
+            if (mobileMenu && !mobileMenu.classList.contains('hidden') && !mobileMenu.contains(event.target) && event.target !== mobileMenuButton) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+/* Product Bundle Styles */
+.product-bundle {
+  margin-bottom: var(--spacing-xxl);
+}
+
+.bundle-container {
+  background-color: var(--color-bg-alt);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-lg);
+}
+
+.bundle-products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+}
+
+.bundle-product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.bundle-product-image {
+  width: 100%;
+  max-width: 150px;
+  aspect-ratio: 1;
+  margin-bottom: var(--spacing-sm);
+  position: relative;
+}
+
+.bundle-product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--border-radius-md);
+}
+
+.bundle-product-name {
+  font-weight: 500;
+  margin-bottom: var(--spacing-xs);
+}
+
+.bundle-product-price {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.bundle-summary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--spacing-lg);
+}
+
+.bundle-pricing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+.bundle-total-label {
+  font-size: var(--font-size-md);
+  margin-bottom: var(--spacing-xs);
+}
+
+.bundle-total-price {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+}
+
+.bundle-savings {
+  color: var(--color-success);
+  font-size: var(--font-size-sm);
+  margin-top: var(--spacing-xs);
+}
+
+.bundle-button {
+  width: 100%;
+  max-width: 300px;
+}
+
+.bundle-plus {
+  display: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--color-bg);
+  box-shadow: var(--shadow-sm);
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-lg);
+  color: var(--color-text-light);
+}
+
+.main-product-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-primary);
+  color: white;
+  font-size: var(--font-size-xs);
+  padding: 2px 8px;
+  border-radius: var(--border-radius-sm);
+}
+
+/* Responsive layout */
+@media (min-width: 768px) {
+  .bundle-products {
+    display: flex;
+    align-items: center;
+  }
+  
+  .bundle-plus {
+    display: flex;
+  }
+  
+  .bundle-summary {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .bundle-pricing {
+    align-items: flex-start;
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .bundle-container {
+    padding: var(--spacing-md);
+  }
+  
+  .bundle-products {
+    grid-template-columns: 1fr;
+  }
+}
